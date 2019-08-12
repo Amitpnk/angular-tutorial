@@ -19,7 +19,7 @@ For feedback can drop mail to my email address amit.naik8103@gmail.com or you ca
 ### Lab 1 - Angular overview
 
 #### Setting up Angular 8 Development environment
-Insall Node and npm latest version <br/>
+Install Node and npm latest version <br/>
 Install Angular CLI 8 or later<br/>
 Install Visual Studio Code <br/>
 
@@ -72,11 +72,17 @@ $ ng build
 
 #### Configuration files
 
-angular.json for Angular
-package.json for Node
-tsconfig.json for TypeScript
-tslint.json for Linting
+angular.json for Angular<br/>
+package.json for Node<br/>
+tsconfig.json for TypeScript<br/>
+tslint.json for Linting<br/>
 
+#### Files in dist folder (after running ng build cmd)
+runtime.js -> This is for webpack runtime<br/>
+polyfill.js -> Helps to run new ES version javascript in old browser which does not support them<br/>
+vendor.js -> Actual project code (component, modules, model)<br/>
+main.js -> Points first module<br/>
+style.js -> all css code<br/>
 
 
 ### Lab 3 - Installing bootstrap for Angular
