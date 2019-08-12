@@ -19,9 +19,9 @@ For feedback can drop mail to my email address amit.naik8103@gmail.com or you ca
 ### Lab 1 - Angular overview
 
 #### Setting up Angular 8 Development environment
-Insall Node and npm latest version
-Install Angular CLI 8 or later
-Install Visual Studio Code 
+Insall Node and npm latest version <br/>
+Install Angular CLI 8 or later<br/>
+Install Visual Studio Code <br/>
 
 ```
 // Installing Angular CLI
@@ -35,8 +35,16 @@ $ ng v
 
 ### Lab 2 - npm example
 
-It is command line interface which helps to get basic setup of angular project 
+```
+$ npm init
+$ npm install jquery --save
+```
+
+Angular CLI is command line interface which helps to get basic setup of angular project <br/>
 For eg: If we run, `npm install --save angular` we will able to get angular 1.7.8 as updated in package-lock.json file, so angular-cli helps to get latest version of angular (currently 8) with basic setup of angular project
+
+AngularJS means 1.X version
+Angular means 2.x or higher
 
 ```
 // For dry run
@@ -48,11 +56,28 @@ $ ng new angular-customer-app2
 // to redirect to path
 $ cd angular-customer-app2
 
-// to run application
+// to run application in development mode
 $ ng serve --open 
 $ ng s -o
+// Open http://localhost:4200 to view it in the browser.
+
+// to build application 
+$ ng build
+// create dist folder which will go for production
+
+
+
 
 ```
+
+#### Configuration files
+
+angular.json for Angular
+package.json for Node
+tsconfig.json for TypeScript
+tslint.json for Linting
+
+
 
 ### Lab 3 - Installing bootstrap for Angular
 
