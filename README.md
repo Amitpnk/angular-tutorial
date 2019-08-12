@@ -72,10 +72,10 @@ $ ng build
 
 #### Configuration files
 
-angular.json for Angular<br/>
-package.json for Node<br/>
-tsconfig.json for TypeScript<br/>
-tslint.json for Linting<br/>
+angular.json -> Angular<br/>
+package.json -> Node<br/>
+tsconfig.json -> TypeScript<br/>
+tslint.json -> Linting<br/>
 
 #### Files in dist folder (after running ng build cmd)
 runtime.js -> This is for webpack runtime<br/>
