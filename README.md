@@ -159,9 +159,9 @@ Add below code snippet in app.component.html
 <div class="container">
     <nav class="navbar navbar-default">
         <ul class="nav navbar-nav">
-            <li><a routerLinkActive="active" routerLink="Home">Home</a></li>
-            <li><a routerLinkActive="active" routerLink="Customer">Customer</a></li>
-            <li><a routerLinkActive="active" routerLink="Supplier">Supplier</a></li>
+            <li routerLinkActive="active"><a routerLink="Home" >Home</a></li>
+            <li routerLinkActive="active"><a routerLink="Customer" >Customer</a></li>
+            <li routerLinkActive="active"><a routerLink="Supplier" >Supplier</a></li>
         </ul>
     </nav>
     <router-outlet></router-outlet>
