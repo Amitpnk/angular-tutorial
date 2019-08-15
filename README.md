@@ -1,4 +1,4 @@
-# angular-customer-app2
+# angular-application
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1
 
@@ -18,7 +18,20 @@ For feedback can drop mail to my email address amit.naik8103@gmail.com or you ca
 
 ### Lab 1 - Angular overview
 
-#### Setting up Angular 8 Development environment
+What and why we have to use Angular
+
+### Lab 2 - npm example
+
+#### 
+
+
+```
+$ npm init
+$ npm install jquery --save
+$ npm install angular --save
+```
+
+### Lab 3 - Setting up Angular 8 Development environment
 Install Node and npm latest version <br/>
 Install Angular CLI 8 or later<br/>
 Install Visual Studio Code <br/>
@@ -33,13 +46,6 @@ $ node -v
 $ ng v
 ```
 
-### Lab 2 - npm example
-
-```
-$ npm init
-$ npm install jquery --save
-```
-
 Angular CLI is command line interface which helps to get basic setup of angular project <br/>
 For eg: If we run, `npm install --save angular` we will able to get angular 1.7.8 as updated in package-lock.json file, so angular-cli helps to get latest version of angular (currently 8) with basic setup of angular project
 
@@ -48,13 +54,13 @@ Angular means 2.x or higher
 
 ```
 // For dry run
-$ ng new angular-customer-app2 -d
+$ ng new angular-application -d
 
 // To create angular application
-$ ng new angular-customer-app2
+$ ng new angular-application
 
 // to redirect to path
-$ cd angular-customer-app2
+$ cd angular-application
 
 // to run application in development mode
 $ ng serve --open 
