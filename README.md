@@ -24,7 +24,7 @@ You can find answer [here](https://dotnet-professional-amit.blogspot.com/2019/07
 #### Prerequisite to learn angular
 
 Install Node and npm latest version <br/> 
-Install Angular CLI 8 or later<br/>
+Install Angular CLI 8 or later <br/>
 Install Visual Studio Code <br/>
 
 ### Lab 2 - npm example
@@ -137,11 +137,11 @@ $ ng g c Customer/Customer --skipTests --flat=true -is
 $ ng g c Supplier/Supplier --skipTests --flat=true -is
 ```
 
-`--skipTests` is to skipt spec files
-`--flat` is to not create folder
-`-is` is to skip css files
+`--skipTests` is to skipt spec files <br/>
+`--flat` is to not create folder <br/>
+`-is` is to skip css files <br/>
 
-Add below line in app-routing.module
+Add below code snippet in app-routing.module
 
 ```typescript
 const routes: Routes = [
@@ -151,4 +151,19 @@ const routes: Routes = [
   { path: '', component: HomeComponent }
 
 ];
+```
+
+Add below code snippet in app.component.html
+
+```html
+<div class="container">
+    <nav class="navbar navbar-default">
+        <ul class="nav navbar-nav">
+            <li><a routerLinkActive="active" routerLink="Home">Home</a></li>
+            <li><a routerLinkActive="active" routerLink="Customer">Customer</a></li>
+            <li><a routerLinkActive="active" routerLink="Supplier">Supplier</a></li>
+        </ul>
+    </nav>
+    <router-outlet></router-outlet>
+</div>
 ```
