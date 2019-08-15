@@ -1,6 +1,6 @@
 # angular-application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1
+Step by step creating angular application with each labs
 
 ## About Angular application
 
@@ -19,22 +19,33 @@ For feedback can drop mail to my email address amit.naik8103@gmail.com or you ca
 ### Lab 1 - Angular overview
 
 What and why we have to use Angular
+You can find answer [here](https://dotnet-professional-amit.blogspot.com/2019/07/interview-question-one-line-on-angular.html)
+
+#### Prerequisite to learn angular
+
+Install Node and npm latest version <br/> 
+Install Angular CLI 8 or later<br/>
+Install Visual Studio Code <br/>
 
 ### Lab 2 - npm example
 
-#### 
-
-
 ```
+
 $ npm init
 $ npm install jquery --save
 $ npm install angular --save
 ```
 
-### Lab 3 - Setting up Angular 8 Development environment
-Install Node and npm latest version <br/>
-Install Angular CLI 8 or later<br/>
-Install Visual Studio Code <br/>
+#### package.json and versioning
+
+What is Major version, minor version and revision version <br/>
+What is difference between ^, ~ and * <br/>
+What is difference between dependency and devDependency
+
+
+### Lab 3 - Setting up and running first angular application
+
+#### Angular CLI
 
 ```
 // Installing Angular CLI
@@ -71,9 +82,6 @@ $ ng s -o
 $ ng build
 // create dist folder which will go for production
 
-
-
-
 ```
 
 #### Configuration files
@@ -84,6 +92,7 @@ tsconfig.json -> TypeScript<br/>
 tslint.json -> Linting<br/>
 
 #### Files in dist folder (after running ng build cmd)
+
 runtime.js -> This is for webpack runtime<br/>
 polyfill.js -> Helps to run new ES version javascript in old browser which does not support them<br/>
 vendor.js -> Actual project code (component, modules, model)<br/>
@@ -91,7 +100,7 @@ main.js -> Points first module<br/>
 style.js -> all css code<br/>
 
 
-### Lab 3 - Installing bootstrap for Angular
+### Lab 4 - Installing bootstrap for Angular
 
 In this lab we will see how to integrate old javascript frameworks like bootstrap and jQuery with Angular
 
@@ -101,6 +110,9 @@ install bootstrap, jquery and @types/jquery to your package.json file
 $ npm install bootstrap@3 --save
 $ npm install @types/jquery --save
 $ npm install jquery --save
+// or you can all these command in one go
+$ npm install bootstrap@3 @types/jquery jquery --save
+
 ```
 
 Add below jquery to angular.json 
@@ -115,7 +127,14 @@ Add below jquery to angular.json
 ]
 ```
 
-To check if library plugged in properly to our angular application
-```
-http://localhost:4200/node_modules/bootstrap/dist/js/bootstrap.min.js
+ 
+
+### Lab 5 - Angular Routing
+
+Create Customer, Supplier and Home page using below command
+
+```cmd
+ng g c Home/Home --skipTests --flat=true
+ng g c Customer/Customer --skipTests --flat=true
+ng g c Supplier/Supplier --skipTests --flat=true
 ```
