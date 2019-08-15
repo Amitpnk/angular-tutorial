@@ -127,14 +127,28 @@ Add below jquery to angular.json
 ]
 ```
 
- 
-
 ### Lab 5 - Angular Routing
 
 Create Customer, Supplier and Home page using below command
 
 ```cmd
-ng g c Home/Home --skipTests --flat=true
-ng g c Customer/Customer --skipTests --flat=true
-ng g c Supplier/Supplier --skipTests --flat=true
+$ ng g c Home/Home --skipTests --flat=true -is
+$ ng g c Customer/Customer --skipTests --flat=true -is
+$ ng g c Supplier/Supplier --skipTests --flat=true -is
+```
+
+`--skipTests` is to skipt spec files
+`--flat` is to not create folder
+`-is` is to skip css files
+
+Add below line in app-routing.module
+
+```typescript
+const routes: Routes = [
+  { path: 'Home', component: HomeComponent },
+  { path: 'Customer', component: CustomerComponent },
+  { path: 'Supplier', component: SupplierComponent },
+  { path: '', component: HomeComponent }
+
+];
 ```
