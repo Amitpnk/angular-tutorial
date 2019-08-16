@@ -119,12 +119,19 @@ Add below jquery to angular.json
 
 ```json
 "styles": [
-  "node_modules/bootstrap/dist/css/bootstrap.min.css",
+  "node_modules/bootstrap/dist/css/bootstrap.min.css"
 ],
 "scripts": [
   "node_modules/jquery/dist/jquery.min.js",
-  "node_modules/bootstrap/dist/js/bootstrap.min.js",
+  "node_modules/bootstrap/dist/js/bootstrap.min.js"
 ]
+```
+
+Check by adding button with css in app.component.html file
+
+```html
+Welcome to {{ title }}! <br/>
+<input type="button" value="Test" class="btn btn-primary">
 ```
 
 ### Lab 5 - Angular Routing
@@ -166,4 +173,56 @@ Add below code snippet in app.component.html
     </nav>
     <router-outlet></router-outlet>
 </div>
+```
+
+### Lab 6 - Creating simple UI page
+
+Create Customer Model class in customer folder using below command
+
+```
+$ ng g class Customer/customer-model --skipTests
+```
+
+Add below code snippet in customer-model.ts
+
+```typescript
+export class CustomerModel {
+    CustomerCode: string;
+    CustomerName: string;
+    CustomerAmount: number;
+}
+```
+
+Create simple UI page in customer.component.html
+```html
+<div>
+    Customer code : <input type="text" [(ngModel)]="customerModel.CustomerCode" name="cCode" id="cCode"> <br>
+    Customer name : <input type="text" [(ngModel)]="customerModel.CustomerName" name="cName" id="cName"> <br>
+    Customer amount : <input type="text" [(ngModel)]="customerModel.CustomerAmount" name="cAmount" id="cAmount"> <br>
+    <input type="button" value="Add">
+    <br>
+    {{customerModel.CustomerCode}} <br>
+    {{customerModel.CustomerName}} <br>
+    {{customerModel.CustomerAmount}} <br>
+</div>
+```
+
+
+import FormsModule to app.module.ts file
+
+```typescript
+import { FormsModule } from "@angular/forms";
+.
+.
+@NgModule({
+ .
+ .
+  imports: [
+    BrowserModule,
+    AppRoutingModule, FormsModule
+  ],
+  .
+  .
+})
+export class AppModule { }
 ```
