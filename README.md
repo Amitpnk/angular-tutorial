@@ -183,7 +183,7 @@ Create Customer Model class in customer folder using below command
 $ ng g class Customer/customer-model --skipTests
 ```
 
-Add below code snippet in customer-model.ts
+Add below code snippet in *customer-model.ts*
 
 ```typescript
 export class CustomerModel {
@@ -193,7 +193,7 @@ export class CustomerModel {
 }
 ```
 
-Create simple UI page in customer.component.html
+Create simple UI page in *customer.component.html*
 ```html
 <div>
     Customer code : <input type="text" [(ngModel)]="customerModel.CustomerCode" name="cCode" id="cCode"> <br>
@@ -207,7 +207,7 @@ Create simple UI page in customer.component.html
 </div>
 ```
 
-create customer object in customer.component.html
+create customer object in *customer.component.html*
 
 ```typescript
 import { CustomerModel } from './customer-model';
@@ -220,7 +220,7 @@ export class CustomerComponent implements OnInit {
 
 ```
 
-import FormsModule to app.module.ts file
+import FormsModule to *app.module.ts* file
 
 ```typescript
 import { FormsModule } from "@angular/forms";
@@ -244,7 +244,7 @@ Build and run application
 
 #### For creating html table
 
-create customers object in customer.component.ts
+create customers object in *customer.component.ts*
 
 ```typescript
 import { CustomerModel } from './customer-model';
@@ -263,7 +263,7 @@ export class CustomerComponent implements OnInit {
 
 ```
 
-and bind to customer.component.html file
+and bind to *customer.component.html* file
 
 ```html
   <table>
