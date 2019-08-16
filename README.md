@@ -207,6 +207,18 @@ Create simple UI page in customer.component.html
 </div>
 ```
 
+create customer object in customer.component.html
+
+```typescript
+import { CustomerModel } from './customer-model';
+.
+export class CustomerComponent implements OnInit {
+  .
+  .
+  customerModel: CustomerModel = new CustomerModel();
+}
+
+```
 
 import FormsModule to app.module.ts file
 
@@ -226,3 +238,46 @@ import { FormsModule } from "@angular/forms";
 })
 export class AppModule { }
 ```
+
+Build and run application 
+***
+
+#### For creating html table
+
+create customers object in customer.component.ts
+
+```typescript
+import { CustomerModel } from './customer-model';
+.
+export class CustomerComponent implements OnInit {
+  .
+  .
+  customerModel: CustomerModel = new CustomerModel();
+  customerModels: Array<CustomerModel> = new Array<CustomerModel>();
+
+  Add() {
+    this.customerModels.push(this.customerModel);
+    this.customerModel = new CustomerModel();
+  }
+}
+
+```
+
+and bind to customer.component.html file
+
+```html
+  <table>
+        <tr>
+            <td>Customer code</td>
+            <td>Customer name</td>
+            <td>Customer amount</td>
+        </tr>
+        <tr *ngFor ="let cust of customerModels" >
+            <td> {{cust.CustomerCode}} </td>
+            <td> {{cust.CustomerName}} </td>
+            <td> {{cust.CustomerAmount}} </td>
+        </tr>
+    </table>
+```
+Build and run application 
+***
