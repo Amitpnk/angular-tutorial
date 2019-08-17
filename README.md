@@ -320,6 +320,6 @@ const routes: Routes = [
 ];
 ```
 
-Remove CustomerComponent and SupplierComponent in *app.module.ts* file
+Remove *CustomerComponent* and *SupplierComponent* in *app.module.ts* file
 
-Delcare CustomerComponent and SupplierComponent w.r.t its Module file
+Delcare *CustomerComponent* and *SupplierComponent* w.r.t its Module file
