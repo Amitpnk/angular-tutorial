@@ -376,6 +376,6 @@ export class CustomerModel {
         code is required</div>
     <div *ngIf="customerModel.formCustomerGroup.dirty" [hidden]="!(hasError('required', 'CustomerNameControl'))">
         Customer name is required</div>
-
+    // ...
 </form>
 ```
