@@ -265,7 +265,7 @@ export class CustomerComponent implements OnInit {
 
 and bind to *customer.component.html* file
 
-```html
+```
   <table>
         <tr>
             <td>Customer code</td>
@@ -275,7 +275,7 @@ and bind to *customer.component.html* file
         <tr *ngFor ="let cust of customerModels" >
             <td>{{cust.CustomerCode}}</td>
             <td>{{cust.CustomerName}}</td>
-            <td>{{cust.CustomerAmount}} /td>
+            <td>{{cust.CustomerAmount}}</td>
         </tr>
     </table>
 ```
