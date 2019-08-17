@@ -273,11 +273,12 @@ and bind to *customer.component.html* file
             <td>Customer amount</td>
         </tr>
         <tr *ngFor ="let cust of customerModels" >
-            <td> {{cust.CustomerCode}} </td>
-            <td> {{cust.CustomerName}} </td>
-            <td> {{cust.CustomerAmount}} </td>
+            <td>{{cust.CustomerCode}}</td>
+            <td>{{cust.CustomerName}}</td>
+            <td>{{cust.CustomerAmount}} /td>
         </tr>
     </table>
 ```
-Build and run application 
+
+Build and run application
 ***
