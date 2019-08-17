@@ -323,3 +323,59 @@ const routes: Routes = [
 Remove *CustomerComponent* and *SupplierComponent* in *app.module.ts* file
 
 Delcare *CustomerComponent* and *SupplierComponent* w.r.t its Module file
+
+### Lab 8 - Implementing validation
+
+
+
+```typescript
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+
+export class CustomerModel {
+    CustomerCode: string;
+    CustomerName: string;
+    CustomerAmount: number;
+
+    formCustomerGroup : FormGroup;
+    constructor(){
+        let builder = new FormBuilder();
+        this.formCustomerGroup = builder.group({});
+
+        this.formCustomerGroup.addControl("CustomerNameControl", new FormControl('', Validators.required));
+
+        let validationCollection =[];
+        validationCollection.push(Validators.required);
+        validationCollection.push(Validators.pattern("^[0-9]{4,4}$"));
+
+        this.formCustomerGroup.addControl("CustomerCodeControl", new FormControl('',Validators.compose(validationCollection)));
+
+    }
+}
+
+```
+
+
+```html
+<form [formGroup]="customerModel.formCustomerGroup">
+    Customer code : <input type="text" formControlName="CustomerCodeControl" [(ngModel)]="customerModel.CustomerCode"
+        name="cCode" id="cCode"> <br>
+    Customer name : <input type="text" formControlName="CustomerNameControl" [(ngModel)]="customerModel.CustomerName"
+        name="cName" id="cName"> <br>
+    Customer amount : <input type="text" [(ngModel)]="customerModel.CustomerAmount" name="cAmount" id="cAmount"
+        [ngModelOptions]="{standalone: true}"> <br>
+    <input type="button" value="Add" (click)="Add()" [disabled]="!(customerModel.formCustomerGroup.valid)">
+    <br>
+    {{customerModel.CustomerCode}} <br>
+    {{customerModel.CustomerName}} <br>
+    {{customerModel.CustomerAmount}} <br>
+    <div *ngIf="customerModel.formCustomerGroup.dirty" [hidden]="!(hasError('pattern', 'CustomerCodeControl'))">Customer
+        code
+        format is not proper</div>
+    <div *ngIf="customerModel.formCustomerGroup.dirty" [hidden]="!(hasError('required', 'CustomerNameControl'))">
+        Customer
+        code is required</div>
+    <div *ngIf="customerModel.formCustomerGroup.dirty" [hidden]="!(hasError('required', 'CustomerNameControl'))">
+        Customer name is required</div>
+
+</form>
+```
