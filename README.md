@@ -265,7 +265,7 @@ export class CustomerComponent implements OnInit {
 
 and bind to *customer.component.html* file
 
-```
+```html
   <table>
         <tr>
             <td>Customer code</td>
