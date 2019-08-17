@@ -282,3 +282,44 @@ and bind to *customer.component.html* file
 
 Build and run application
 ***
+
+### Lab 7 - Implementing lazy loading and increase the performance of the application
+
+Create Customer and Supplier module w.r.t component
+
+```
+$ ng g module Customer/Customer --flat=true --routing=true
+
+$ ng g module Supplier/Supplier --flat=true --routing=true  
+```
+
+Modify routes in *app-routing.module.ts* file
+
+```typescript
+const routes: Routes = [
+  { path: 'Home', component: HomeComponent },
+  { path: 'Customer', loadChildren: './Customer/customer.module#CustomerModule' },
+  { path: 'Supplier', loadChildren: './Supplier/supplier.module#SupplierModule' },
+  { path: '', component: HomeComponent }
+];
+```
+
+Modify routes in child file *customer-routing.module.ts*
+
+```typescript
+const routes: Routes = [
+  { path: 'Add', component: CustomerComponent }
+];
+```
+
+Modify routes in child file *supplier-routing.module.ts*
+
+```typescript
+const routes: Routes = [
+  { path: '', component: SupplierComponent }
+];
+```
+
+Remove CustomerComponent and SupplierComponent in *app.module.ts* file
+
+Delcare CustomerComponent and SupplierComponent w.r.t its Module file
