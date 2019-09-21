@@ -280,7 +280,12 @@ and bind to *customer.component.html* file
     </table>
 ```
 
-Build and run application
+Build and run application <br>
+
+Property binding (UI to component) - [] <br>
+Event binding (component to UI) - ()<br>
+Interpolation (Expression) - {{}}<br>
+
 ***
 
 ### Lab 7 - Implementing lazy loading and increase the performance of the application
@@ -326,8 +331,6 @@ Delcare *CustomerComponent* and *SupplierComponent* w.r.t its Module file
 
 ### Lab 8 - Implementing validation
 
-
-
 ```typescript
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
@@ -354,7 +357,6 @@ export class CustomerModel {
 
 ```
 
-
 ```html
 <form [formGroup]="customerModel.formCustomerGroup">
     Customer code : <input type="text" formControlName="CustomerCodeControl" [(ngModel)]="customerModel.CustomerCode"
@@ -379,3 +381,194 @@ export class CustomerModel {
     // ...
 </form>
 ```
+
+### Lab 9 - Dependency injection
+
+There is two types of DI
+1. Centrailised DI
+2. Conditional DI
+
+Create interface with inheritance logger file (eg. *ILogger.ts*) in Utility folder 
+
+```typescript
+export interface ILogger {
+    Log();
+}
+
+export class BaseLogger implements ILogger {
+    Log() {
+
+    }
+}
+
+export class ConsoleLogger extends BaseLogger {
+    Log() {
+        console.log("consoler logger");
+    }
+}
+
+export class DbLogger extends BaseLogger {
+    Log() {
+        console.log("DB logger");
+    }
+}
+```
+
+Adding BaseLogger to app.module.ts
+```typescript
+
+providers: [
+    // centralised DI
+    { provide: BaseLogger, useClass: DbLogger },
+]
+```
+Add below line in the component file
+```typescript
+export class CustomerComponent implements OnInit {
+
+  logObj: BaseLogger;
+
+  constructor(log: BaseLogger) {
+    this.logObj = log;
+    this.logObj.Log();
+  }
+
+```
+For conditional based DI
+```typescript
+ providers: [
+    // centralised DI
+    { provide: BaseLogger, useClass: ConsoleLogger },
+
+    // Conditional DI
+    { provide: '1', useClass: ConsoleLogger },
+    { provide: '2', useClass: DbLogger },
+  ],
+```
+In Customer component
+
+```typescript
+  logObj: BaseLogger;
+
+  constructor(log: Injector) {
+    this.logObj = log.get('1');
+    this.logObj.Log();
+  }
+```
+
+### Lab 10 - Making http calls
+
+To create fake API, run below command
+```
+npm install -g json-server
+```
+To run fake API, create new terminal and run below command
+```
+json-server --watch db.json
+```
+Replace below code snippet to db.json
+```json
+[
+  {
+    "id": 1,
+    "CustomerCode": "1001",
+    "CustomerName": "Amit",
+    "CustomerAmount": "50000"
+  }
+]
+```
+Add button in *customer.component.html* file
+```html
+<input type="button" value="Post to server" (click)="PostToServer()">
+```
+
+Add below code snippet in customer.component.ts
+```typescript
+  constructor(log: Injector, public http: HttpClient) {
+  //--
+  }
+
+
+  PostToServer() {
+    let custDTO: any = {};
+    custDTO.CustomerCode = this.customerModel.CustomerCode;
+    custDTO.CustomerName = this.customerModel.CustomerName;
+    custDTO.CustomerAmount = this.customerModel.CustomerAmount;
+
+    this.http.post('http://localhost:3000/Customers', custDTO)
+      .subscribe(res => this.Success(res), res => this.Error(res))
+  }
+
+  GetFromServer() {
+    this.http.get('http://localhost:3000/Customers')
+      .subscribe(res => this.SuccessGet(res), res => this.Error(res))
+  }
+
+  Success(res) {
+    this.GetFromServer();
+  }
+
+  Error(res) {
+    console.log(res);
+  }
+
+  SuccessGet(res) {
+    this.customerModels = res;
+    this.customerModel = new CustomerModel();
+  }
+```
+
+### Lab 11 - Services
+
+Create *Service.ts* file
+
+```typescript
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from "@angular/common/http";
+import { Observable } from 'rxjs';
+
+export class MyInterceptor implements HttpInterceptor {
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+
+        req = req.clone({
+            setHeaders: {
+                "security-key": "key123"
+            }
+        });
+        return next.handle(req);
+    }
+
+}
+```
+
+In *app.module.ts* 
+
+```typescript
+ providers:[
+    // For service
+    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true }
+  ]
+```
+
+### Lab 12 - Pipes
+
+```typescript
+  
+import { Pipe, PipeTransform } from '@angular/core';
+
+// tslint:disable-next-line: use-pipe-transform-interface
+@Pipe({ name: 'reverseit' })
+export class ReverseString {
+
+    transform(value: string): string {
+        return value.split('').reverse().join('');
+    }
+}
+```
+
+In app.module.ts
+```
+declarations: [......,
+ReverseString],
+```
+
+
