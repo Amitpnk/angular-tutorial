@@ -199,7 +199,7 @@ Create simple UI page in *customer.component.html*
     Customer code : <input type="text" [(ngModel)]="customerModel.CustomerCode" name="cCode" id="cCode"> <br>
     Customer name : <input type="text" [(ngModel)]="customerModel.CustomerName" name="cName" id="cName"> <br>
     Customer amount : <input type="text" [(ngModel)]="customerModel.CustomerAmount" name="cAmount" id="cAmount"> <br>
-    <input type="button" value="Add">
+    <input type="button" value="Add" (click)="Add()" >
     <br>
     {{customerModel.CustomerCode}} <br>
     {{customerModel.CustomerName}} <br>
@@ -207,7 +207,7 @@ Create simple UI page in *customer.component.html*
 </div>
 ```
 
-create customer object in *customer.component.html*
+create customer object in *customer.component.ts*
 
 ```typescript
 import { CustomerModel } from './customer-model';
@@ -570,5 +570,4 @@ In app.module.ts
 declarations: [......,
 ReverseString],
 ```
-
 
