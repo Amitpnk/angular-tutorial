@@ -2,6 +2,7 @@
 
 Step by step creating angular application with each labs
 
+
 ## About Angular application
 
 Angular is a declarative JavaScript framework to simply JavaScript code
@@ -10,9 +11,28 @@ In our applicatin, we generated with [Angular CLI](https://github.com/angular/an
 
 AngularJS was originally developed in 2009 by Miško Hevery and Adam Abrons. Abrons left the project, but Hevery, who works at Google, continues to develop and maintain the library with fellow Google employees Igor Minár and Vojta Jína.
 
+## Table of Contents
+
+- [Sending Feedback](#sending-feedback)
+- [Folder Structure](#folder-structure)
+-  Sample application with each labs
+    - [Lab 1 - Angular overview](https://github.com/Amitpnk/angular-application/tree/master/Lab01)
+    - [Lab 2 - npm example](https://github.com/Amitpnk/angular-application/tree/master/Lab02)
+    - [Lab 3 - Setting up and running first angular application](https://github.com/Amitpnk/angular-application/tree/master/Lab03)
+    - [Lab 4 - Installing bootstrap for Angular](https://github.com/Amitpnk/angular-application/tree/master/Lab04)
+    - [Lab 5 - Angular Routing - Creating Master page and Navigators](https://github.com/Amitpnk/angular-application/tree/master/Lab05)
+    - [Lab 6 - Creating simple UI page](https://github.com/Amitpnk/angular-application/tree/master/Lab06)
+    - [Lab 7 - Implementing lazy loading and increase the performance of the application](https://github.com/Amitpnk/angular-application/tree/master/Lab07)
+    - [Lab 8 - Implementing validation](https://github.com/Amitpnk/angular-application/tree/master/Lab08)
+    - [Lab 9 - Dependency Injection](https://github.com/Amitpnk/angular-application/tree/master/Lab09)
+    - [Lab 10 - Making http calls](https://github.com/Amitpnk/angular-application/tree/master/Lab10)
+    - [Lab 11 - Services](https://github.com/Amitpnk/angular-application/tree/master/Lab11)
+    - [Lab 12 - Implementing pipes](https://github.com/Amitpnk/angular-application/tree/master/Lab12)
+     
+
 ## Sending Feedback
 
-For feedback can drop mail to my email address amit.naik8103@gmail.com or you can create [issue](https://github.com/Amitpnk/angular-customer-app/issues/new)
+For feedback can drop mail to my email address amit.naik8103@gmail.com or you can create [issue](https://github.com/Amitpnk/angular-application/issues/new)
 
 ## Sample application with each labs
 
