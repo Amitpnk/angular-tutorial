@@ -500,14 +500,16 @@ json-server --watch db.json
 ```
 Replace below code snippet to db.json
 ```json
-[
-  {
-    "id": 1,
-    "CustomerCode": "1001",
-    "CustomerName": "Amit",
-    "CustomerAmount": "50000"
-  }
-]
+{
+  "Customers": [
+    {
+      "id": 1,
+      "CustomerCode": "1001",
+      "CustomerName": "Amit",
+      "CustomerAmount": "50000"
+    }
+  ]
+}
 ```
 Add button in *customer.component.html* file
 ```html
