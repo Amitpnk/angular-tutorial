@@ -1,0 +1,22 @@
+{
+  "Customers": [
+    {
+      "id": 1,
+      "CustomerCode": "1001",
+      "CustomerName": "Amit",
+      "CustomerAmount": "50000"
+    },
+    {
+      "CustomerCode": "1002",
+      "CustomerName": "Swetha",
+      "CustomerAmount": "70000",
+      "id": 2
+    },
+    {
+      "CustomerCode": "1003",
+      "CustomerName": "Kalpita",
+      "CustomerAmount": "60000",
+      "id": 3
+    }
+  ]
+}
