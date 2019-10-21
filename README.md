@@ -351,6 +351,8 @@ Delcare *CustomerComponent* and *SupplierComponent* w.r.t its Module file
 
 ### Lab 8 - Implementing validation
 
+Add below code snippet in customer-model.ts
+
 ```typescript
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
@@ -377,6 +379,8 @@ export class CustomerModel {
 
 ```
 
+Add below code snippet in customer.component.html
+
 ```html
 <form [formGroup]="customerModel.formCustomerGroup">
     Customer code : <input type="text" formControlName="CustomerCodeControl" [(ngModel)]="customerModel.CustomerCode"
@@ -401,6 +405,14 @@ export class CustomerModel {
     // ...
 </form>
 ```
+
+Add below code snippet in customer.component.ts
+
+```typescript
+hasError(typeofValidator: string, controlName: string): boolean {   return this.customerModel.formCustomerGroup.controls[controlName].hasError(typeofValidator);
+}
+```
+
 
 ### Lab 9 - Dependency injection
 
