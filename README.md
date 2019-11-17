@@ -195,6 +195,11 @@ Add below code snippet in app.component.html
 </div>
 ```
 
+with moon-wrap html <br>
+```div.container>nav.navbar.navbar-default>ul.nav.navbar-nav>li>a```
+(double tab)
+
+
 ### Lab 6 - Creating simple UI page
 
 Create Customer Model class in customer folder using below command
