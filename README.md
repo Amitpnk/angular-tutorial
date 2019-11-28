@@ -197,7 +197,7 @@ Add below code snippet in app.component.html
 
 with moon-wrap html <br>
 ```div.container>nav.navbar.navbar-default>ul.nav.navbar-nav>li>a```
-(double tab)
+(click on tab)
 
 
 ### Lab 6 - Creating simple UI page
