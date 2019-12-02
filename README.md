@@ -71,10 +71,34 @@ What is difference between dependency and devDependency
 // Installing Angular CLI
 $ npm install -g @angular/cli 
 
-// To verify vesion 
+
 $ npm -v
 $ node -v
+
+// Below are some Angular CLI
+
+// To check angular CLI versions
+$ ng --versions
 $ ng v
+
+// Another way to verify angular CLI in global level 
+$ npm list -g @angular/cli 
+
+// To upgrade angular CLI to latest version
+$ npm uninstall -g @angular/cli
+$ npm cache clean
+$ npm install -g @angular/cli
+
+// Getting help in Angular CLI
+$ ng help
+
+// Creating angular application without node_module folder
+$ ng new project-name --skip-install
+
+// Creating angular application
+$ ng new project-name
+
+
 ```
 
 Angular CLI is command line interface which helps to get basic setup of angular project <br/>
