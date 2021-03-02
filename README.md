@@ -16,18 +16,18 @@ AngularJS was originally developed in 2009 by Miško Hevery and Adam Abrons. Abr
 - [Sending Feedback](#sending-feedback)
 - [Folder Structure](#folder-structure)
 -  Sample application with each labs
-    - [Lab 1 - Angular overview](https://github.com/Amitpnk/angular-application/tree/master/Lab01)
-    - [Lab 2 - npm example](https://github.com/Amitpnk/angular-application/tree/master/Lab02)
-    - [Lab 3 - Setting up and running first angular application](https://github.com/Amitpnk/angular-application/tree/master/Lab03)
-    - [Lab 4 - Installing bootstrap for Angular](https://github.com/Amitpnk/angular-application/tree/master/Lab04)
-    - [Lab 5 - Angular Routing - Creating Master page and Navigators](https://github.com/Amitpnk/angular-application/tree/master/Lab05)
-    - [Lab 6 - Creating simple UI page](https://github.com/Amitpnk/angular-application/tree/master/Lab06)
-    - [Lab 7 - Implementing lazy loading and increase the performance of the application](https://github.com/Amitpnk/angular-application/tree/master/Lab07)
-    - [Lab 8 - Implementing validation](https://github.com/Amitpnk/angular-application/tree/master/Lab08)
-    - [Lab 9 - Dependency Injection](https://github.com/Amitpnk/angular-application/tree/master/Lab09)
-    - [Lab 10 - Making http calls](https://github.com/Amitpnk/angular-application/tree/master/Lab10)
-    - [Lab 11 - Services](https://github.com/Amitpnk/angular-application/tree/master/Lab11)
-    - [Lab 12 - Implementing pipes](https://github.com/Amitpnk/angular-application/tree/master/Lab12)
+    - [Lab 1 - Angular overview](#lab-1---angular-overview)
+    - [Lab 2 - npm example](#lab-2---npm-example)
+    - [Lab 3 - Setting up and running first angular application](#lab-3---setting-up-and-running-first-angular-application)
+    - [Lab 4 - Installing bootstrap for Angular](#lab-4---installing-bootstrap-for-angular)
+    - [Lab 5 - Angular Routing - Creating Master page and Navigators](#lab-5---angular-routing)
+    - [Lab 6 - Creating simple UI page](#lab-6---creating-simple-ui-page)
+    - [Lab 7 - Implementing lazy loading and increase the performance of the application](#lab-7---implementing-lazy-loading-and-increase-the-performance-of-the-application)
+    - [Lab 8 - Implementing validation](#lab-8---implementing-validation)
+    - [Lab 9 - Dependency Injection](#lab-9---dependency-injection)
+    - [Lab 10 - Making http calls](#lab-10---making-http-calls)
+    - [Lab 11 - Services](#lab-11---services)
+    - [Lab 12 - Implementing pipes](#lab-12---pipes)
      
 
 ## Sending Feedback
@@ -182,7 +182,7 @@ Welcome to {{ title }}! <br/>
 
 Create Customer, Supplier and Home page using below command
 
-```cmd
+```ps1
 $ ng g c Home/Home --skipTests --flat=true -is
 $ ng g c Customer/Customer --skipTests --flat=true -is
 $ ng g c Supplier/Supplier --skipTests --flat=true -is
@@ -200,22 +200,21 @@ const routes: Routes = [
   { path: 'Customer', component: CustomerComponent },
   { path: 'Supplier', component: SupplierComponent },
   { path: '', component: HomeComponent }
-
 ];
 ```
 
 Add below code snippet in app.component.html
 
-```html
+```diff
 <div class="container">
-    <nav class="navbar navbar-default">
+     <nav class="navbar navbar-default">
         <ul class="nav navbar-nav">
-            <li routerLinkActive="active"><a routerLink="Home" >Home</a></li>
-            <li routerLinkActive="active"><a routerLink="Customer" >Customer</a></li>
-            <li routerLinkActive="active"><a routerLink="Supplier" >Supplier</a></li>
++           <li routerLinkActive="active"><a routerLink="Home" >Home</a></li>
++           <li routerLinkActive="active"><a routerLink="Customer" >Customer</a></li>
++           <li routerLinkActive="active"><a routerLink="Supplier" >Supplier</a></li>
         </ul>
-    </nav>
-    <router-outlet></router-outlet>
+     </nav>
++    <router-outlet></router-outlet>
 </div>
 ```
 
